@@ -36,20 +36,9 @@
 		<!-- Use the main area to add the main content of the webpage-->
 		<main>
 
-		<% var today = new Date();
-			var hourNow = today.getHours();
-			var greeting;
-
-			if (hourNow > 18) {
-				greeting = 'Good evening';
-			} else if (hourNow > 12) {
-				greeting = 'Good afternoon';
-			} else if (hourNow > 0) {
-				greeting = 'Good morning';
-			} else {
-				greeting = 'Welcome';
-			}
-			document.write(greeting); %>
+			<div id="greeting">
+				<p style="color: black;">Good morning!</p>
+			</div>
 		
 		<div class="tablet-desktop">
 		
@@ -69,6 +58,27 @@
 		<p>&copy; Copyright 2024. All Rights Reserved.</p>
 		<p><a href="mailto:pnwguide@travel.net">pnwguide@travel.net</a></p>
 	</footer>
+
+	<script>
+		// Java greeting
+		document.addEventListener("DOMContentLoaded", function()
+					  {
+						var today = new Date();
+						var hourNow = today.getHours();
+						var greeting;
+
+						if (hourNow > 18) {
+							greeting = 'Good evening';
+						} else if (hourNow > 12) {
+							greeting = 'Good afternoon';
+						} else if (hourNow > 0) {
+							greeting = 'Good morning';
+						} else {
+							greeting = 'Welcome';
+						}
+						document.getElementById("greeting").innerHTML = `<p style="color: black;">${greeting}</p>`;
+					  });
+	</script>
 	
 	</div>
 	
