@@ -229,3 +229,40 @@ footer p a {
 	}
 	
 }
+#offer_expires {
+  background-color: #253328;
+  color: #fff;
+  width: 120px;
+  padding: 0 15px;
+  text-align: center;
+  min-height: 60%;
+  position: absolute;
+  top: 0;
+  right: 33%;
+ }
+ #hotelName {
+  text-transform: uppercase;
+  text-align: center; 
+  font-size: 80%;
+  margin-top: 10px;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff; 
+  padding: 10px 0;}
+  
+#roomRate{
+  text-decoration: line-through;
+  display: inline-block;
+  float: left;
+  padding-top: 10px;}
+  
+#specialRate {  
+  font-size: 250%;
+  color: #cdffd4;
+  display: inline-block;
+  padding: 10px 0 5px 0;
+  margin: 0;}
+
+#offerEnds {
+  text-transform: uppercase;
+  color: #cdffd4;
+  font-size: 55%;}
