@@ -266,3 +266,9 @@ footer p a {
   text-transform: uppercase;
   color: #cdffd4;
   font-size: 55%;}
+#greeting-container {
+border: 12px double #81857a;
+padding: 20px;
+margin: 70px auto 10px auto;
+width: 250px;
+text-align: center;}
