@@ -58,7 +58,7 @@ today = new Date();                             // Put today's date in variable
 
 //offer expires close Button
 const closePopupBtn = document.getElementById("closePopupBtn");
-const popup = document.getElementById("offer_expires");
+const offer_expires = document.getElementById("offer_expires");
 
 closePopupBtn.addEventListener("click", () => {
   offer_expires.style.display = "none";
