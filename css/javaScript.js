@@ -55,3 +55,11 @@ today = new Date();                             // Put today's date in variable
 
 // Finish the immediately invoked function expression
 }());
+
+//offer expires close Button
+const closePopupBtn = document.getElementById("closePopupBtn");
+const popup = document.getElementById("offer_expires");
+
+closePopupBtn.addEventListener("click", () => {
+  offer_expires.style.display = "none";
+});
