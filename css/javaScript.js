@@ -63,3 +63,14 @@ const offer_expires = document.getElementById("offer_expires");
 closePopupBtn.addEventListener("click", () => {
   offer_expires.style.display = "none";
 });
+
+$(document).ready(function() {
+    $(".gallery img").hover(
+        function() {
+            $(this).css("transform", "scale(1.2)");
+        },
+        function() {
+            $(this).css("transform", "scale(1)");
+        }
+    );
+});
