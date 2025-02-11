@@ -280,3 +280,11 @@ text-align: center;}
   font-size: 15px;
   cursor: pointer;
 }
+.gallery img {
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.gallery img:hover {
+    transform: scale(1.5);
+}
