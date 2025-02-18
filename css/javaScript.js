@@ -74,3 +74,35 @@ $(document).ready(function() {
         }
     );
 });
+
+// weather API
+$(document).ready(function() {
+	const apiKey = 'd23b6f946bbebfdd7de2a61528d21f34';
+	
+	const city = 'Seattle';
+	const country = 'US';
+	
+	const url = `https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${apiKey}&units=imperial`;
+	
+	$.get(url, function(data) {
+		if (data.cod === 200) {
+		  const temperature = data.main.temp;
+		  const description = data.weather[0].description;
+		  const icon = data.weather[0].icon;
+		  const humidity = data.main.humidity;
+		  const windSpeed = data.wind.speed;
+		  
+		  $('#weather-API').html(`
+			<div class="weather">
+			  <img src="http://openweathermap.org/img/w/${icon}.png" alt="${description}" />
+			  <h3>${city}, ${country}</h3>
+			  <p><strong>${Math.round(temperature)}°F</strong> | ${description}</p>
+			  <p>Humidity: ${humidity}% | Wind Speed: ${windSpeed} mph</p>
+			</div>
+		`);
+		} else {
+			$('#weather-info').html('<p>Could not fetch weather data. Please try again later.</p>');
+    }
+  });
+});
+
