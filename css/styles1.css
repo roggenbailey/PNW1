@@ -4,11 +4,6 @@ File Name: styles.css
 */
 
 /* CSS Reset*/
-main {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
 body, header, nav, main, footer, h1, div, img, ul {
 	margin: 0;
 	padding: 0;
@@ -302,6 +297,8 @@ text-align: center;}
   border-radius: 10px;
   max-width: 400px;
   margin: 50px auto;
+  display: flex;
+  flex-wrap: wrap;
 }
 .weather img {
   width: 50px;
