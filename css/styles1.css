@@ -4,6 +4,11 @@ File Name: styles.css
 */
 
 /* CSS Reset*/
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
 body, header, nav, main, footer, h1, div, img, ul {
 	margin: 0;
 	padding: 0;
@@ -287,4 +292,30 @@ text-align: center;}
 
 .gallery img:hover {
     transform: scale(1.5);
+}
+
+#weather-container {
+  text-align: center;
+  padding: 30px;
+  background-color: #81857a;
+  color: white;
+  border-radius: 10px;
+  max-width: 400px;
+  margin: 50px auto;
+}
+.weather img {
+  width: 50px;
+  height: 50px;
+}
+
+.weather h3 {
+  margin: 10px 0;
+}
+
+.weather p {
+  margin: 5px 0;
+}
+
+.weather p strong {
+  font-size: 1.5em;
 }
