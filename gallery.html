@@ -31,28 +31,55 @@
 		<!-- Use the main area to add the main content of the webpage-->
 		<main>
 		
-		<div class="gallery" class="tablet-desktop">
-		<h1>Deception Pass Bridge</h1>
-		<img class="equip" src="images/deception1.jpg" alt="Deception Pass Bridge" height="285px" width="575px">
-		<img class="equip" src="images/deception2.jpg" alt="Deception Pass Bridge" height="285px" width="575px">
-		<img class="equip" src="images/deception3.jpg" alt="Deception Pass Bridge" height="285px" width="575px">
+		<div class="filter-buttons">
+			<button class="filter-btn" data-filter="all">Show All</button>
+			<button class="filter-btn" data-filter="deception">Deception Pass</button>
+			<button class="filter-btn" data-filter="seattle">Seattle</button>
+			<button class="filter-btn" data-filter="leavenworth">Leavenworth</button>
+			<button class="filter-btn" data-filter="christmas">Christmas</button>
+			<button class="filter-btn" data-filter="market">Market</button>
 		</div>
 		
-		<div class="gallery" class="tablet-desktop">
-		<h1>Seattle</h1>
-		<img class="equip" src="images/seattle1.jpg" alt="Pikes Place Market" height="285px" width="575px">
-		<img class="equip" src="images/seattle2.jpg" alt="Seattle Art Museum" height="285px" width="575px">
-		<img class="equip" src="images/seattle3.jpg" alt="Seattle Gum Wall" height="285px" width="575px">
+		<div class="gallery tablet-desktop" data-category="Deception Pass Bridge">
+			<img class="equip" src="images/deception1.jpg" alt="Deception Pass Bridge" height="285px" width="575px" data-tags="deception,bridge">
+			<img class="equip" src="images/deception2.jpg" alt="Deception Pass Bridge" height="285px" width="575px" data-tags="deception,bridge">
+			<img class="equip" src="images/deception3.jpg" alt="Deception Pass Bridge" height="285px" width="575px" data-tags="deception,bridge">
 		</div>
-		
-		<div class="gallery" class="tablet-desktop">
-		<h1>Leavenworth</h1>
-		<img class="equip" src="images/leavenworth1.jpg" alt="Leavenworth during christmas" height="285px" width="575px">
-		<img class="equip" src="images/leavenworth2.jpg" alt="Leavenworth street view" height="285px" width="575px">
-		<img class="equip" src="images/leavenworth3.jpg" alt="Leavenworth during christmas" height="285px" width="575px"> 
+
+		<div class="gallery tablet-desktop" data-category="Seattle">
+			<img class="equip" src="images/seattle1.jpg" alt="Pikes Place Market" height="285px" width="575px" data-tags="seattle,market">
+			<img class="equip" src="images/seattle2.jpg" alt="Seattle Art Museum" height="285px" width="575px" data-tags="seattle,museum">
+			<img class="equip" src="images/seattle3.jpg" alt="Seattle Gum Wall" height="285px" width="575px" data-tags="seattle,wall">
+		</div>
+
+		<div class="gallery tablet-desktop" data-category="Leavenworth">
+			<img class="equip" src="images/leavenworth1.jpg" alt="Leavenworth during Christmas" height="285px" width="575px" data-tags="leavenworth,christmas">
+			<img class="equip" src="images/leavenworth2.jpg" alt="Leavenworth street view" height="285px" width="575px" data-tags="leavenworth,street">
+			<img class="equip" src="images/leavenworth3.jpg" alt="Leavenworth during Christmas" height="285px" width="575px" data-tags="leavenworth,christmas">
 		</div>
 		
 		</main>
+
+		<script>
+			const filterButtons = document.querySelectorAll('.filter-btn');
+
+			filterButtons.forEach(button => {
+				button.addEventListener('click', function () {
+					const filterValue = this.getAttribute('data-filter');
+
+					const allImages = document.querySelectorAll('.gallery img');
+
+					allImages.forEach(image => {
+						const tags = image.getAttribute('data-tags').split(',');
+						if (filterValue === 'all' || tags.includes(filterValue)) {
+							image.style.display = 'block';
+						} else {
+							image.style.display = 'none';
+						}
+					});
+				});
+			});
+		</script>
 		
 		<!--Use the footer area to add webpage footer content-->
 		<footer>
