@@ -423,3 +423,12 @@ form {
     width: 100%;
     max-width: 500px;
 }
+
+.error {
+        color: red;
+        font-size: 0.875em;
+    }
+
+    input.error, textarea.error {
+        border: 1px solid red;
+    }
