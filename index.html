@@ -95,19 +95,72 @@
 			interest in these locations!</p>
 
 			<h1>Submit Your Favorite Sightseeing Spot</h1>
-    
+
 				<form id="sightseeingForm">
 					<label for="name">Your Name:</label>
 					<input type="text" id="name" name="name" required placeholder="Your Name">
+					<span class="error" id="nameError"></span>
 
 					<label for="spot">Favorite Sightseeing Spot:</label>
 					<input type="text" id="spot" name="spot" required placeholder="Enter Sightseeing Spot">
+					<span class="error" id="spotError"></span>
 
 					<label for="description">Description:</label>
 					<textarea id="description" name="description" placeholder="Tell us about this spot" required></textarea>
+					<span class="error" id="descriptionError"></span>
 
 					<button type="submit">Submit</button>
 				</form>
+				
+				<script>
+					document.getElementById("sightseeingForm").addEventListener("submit", function(event) {
+						event.preventDefault();
+
+						document.querySelectorAll('.error').forEach(el => el.textContent = '');
+						document.querySelectorAll('input, textarea').forEach(el => el.classList.remove('error'));
+
+						const name = document.getElementById("name").value.trim();
+						const spot = document.getElementById("spot").value.trim();
+						const description = document.getElementById("description").value.trim();
+
+						let isValid = true;
+
+						if (name === "") {
+							isValid = false;
+							document.getElementById("nameError").textContent = "Please enter your name.";
+							document.getElementById("name").classList.add("error");
+						} else if (name.length < 3) {
+							isValid = false;
+							document.getElementById("nameError").textContent = "Name should be at least 3 characters.";
+							document.getElementById("name").classList.add("error");
+						}
+
+						if (spot === "") {
+							isValid = false;
+							document.getElementById("spotError").textContent = "Please enter your favorite sightseeing spot.";
+							document.getElementById("spot").classList.add("error");
+						} else if (spot.length < 3) {
+							isValid = false;
+							document.getElementById("spotError").textContent = "Spot name should be at least 3 characters.";
+							document.getElementById("spot").classList.add("error");
+						}
+
+						if (description === "") {
+							isValid = false;
+							document.getElementById("descriptionError").textContent = "Please enter a description.";
+							document.getElementById("description").classList.add("error");
+						} else if (description.length < 10) {
+							isValid = false;
+							document.getElementById("descriptionError").textContent = "Description should be at least 10 characters.";
+							document.getElementById("description").classList.add("error");
+						}
+
+						if (isValid) {
+							alert("Thank you for your submission! Your favorite spot will be added.");
+							document.getElementById("sightseeingForm").reset(); // Reset the form
+						}
+					});
+				</script>
 			
 		</div>
 		
