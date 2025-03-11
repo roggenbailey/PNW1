@@ -173,3 +173,18 @@ $('.slider').each(function() {              // For every slider
 
 });
 
+document.getElementById("sightseeingForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const spot = document.getElementById("spot").value.trim();
+    const description = document.getElementById("description").value.trim();
+
+    if (name === "" || spot === "" || description === "") {
+        alert("Please fill in all fields before submitting.");
+    } else {
+        alert("Thank you for your submission! Your favorite spot will be added.");
+        document.getElementById("sightseeingForm").reset();
+    }
+});
+
